@@ -87,10 +87,10 @@ model.summary()
 print('Training ------------')
 model.fit(X_train, y_train, batch_size=20,validation_split=0.4,epochs=200)
 
-config = model.get_config()
+# config = model.get_config()
 
-import h5py 
-from keras.models import model_from_json  
-json_string = model.to_json()  
-open('add NB.json','w').write(json_string)  
-model.save_weights('add NB.h5')  
+# import h5py
+# from keras.models import model_from_json
+# json_string = model.to_json()
+# open('add NB.json','w').write(json_string)
+# model.save_weights('add NB.h5')
