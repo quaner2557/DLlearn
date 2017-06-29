@@ -33,16 +33,17 @@ from keras.utils import np_utils, generic_utils
 from keras.layers.normalization import BatchNormalization
 
 train_datagen = ImageDataGenerator(
-                rotation_range=120,
+                rotation_range=40,
                 width_shift_range=0.2,
                 height_shift_range=0.2,
                 shear_range=0.2,
                 zoom_range=0.2,
                 horizontal_flip=True,
+                vertical_flip=True,
                 data_format='channels_first',
-                fill_mode='nearest')
+                fill_mode='reflect')
 
-test_datagen = ImageDataGenerator(rescale=1./255,data_format='channels_first')
+test_datagen = ImageDataGenerator(rescale=1./255, data_format='channels_first')
 
 # label为1~3共3个类别，keras要求格式为binary class matrices,转化一下格式
 y_train = np_utils.to_categorical(y_train, 3)
